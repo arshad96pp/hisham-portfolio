@@ -1,26 +1,93 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-background: lab(2.47033% -0.100583 -0.901192);
+  --color-foreground: lab(96.5044% -0.267208 -1.87215);
+  --color-muted-foreground: lab(59.3671% -0.503778 -3.72702);
+  --color-primary: lab(92.0869% -20.2177 72.0643);
+  --color-primary-foreground: lab(2.47033% -0.100583 -0.901192);
+  --color-surface: lab(4.42321% -0.178501 -1.59367);
+  --color-surface-elevated: lab(8.33059% -0.347495 -2.95379);
+  --color-border: lab(96.5044% -0.267208 -1.87215 / 0.08);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
 }
 
+:root {
+  --display: var(--font-inter-tight), "Inter Tight", "Inter", system-ui, sans-serif;
+  --gradient-glow: radial-gradient(60% 60% at 50% 50%, lab(92.0869% -20.2177 72.0643 / 0.18), transparent 70%);
+  --gradient-radial: radial-gradient(circle at 50% 0%, lab(11.5987% -0.0459924 -14.2514 / 0.6), transparent 60%);
+  --shadow-elevated: 0 30px 80px -20px lab(0% 0 0 / 0.6), 0 0 0 1px lab(100% 0 0 / 0.04);
+  --shadow-cta: 0 8px 30px -8px oklch(0.92 0.18 115 / 0.5);
+}
+
+/* Display type carries its own tight tracking; no separate tracking utility is needed. */
+@utility font-display {
+  font-family: var(--display);
+  letter-spacing: -0.04em;
+}
+
+/* Small uppercase section labels, e.g. [ 02 — SELECTED WORKS ]. */
+@utility label-xs {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@utility grain {
+  background-image: radial-gradient(rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-background);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+}
+
+#contact {
+  scroll-margin-top: 6rem;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.lenis) {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
 }
