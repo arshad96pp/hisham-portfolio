@@ -45,9 +45,9 @@ export const intro = {
 };
 
 export const stats = [
-  { value: 3, label: "Years of experience in UI/UX design" }, // PLACEHOLDER figures
-  { value: 30, label: "Happy & satisfied clients" },
-  { value: 50, label: "Projects designed & delivered" },
+  { value: 2, label: "YEARS OF UI/UX DESIGN EXPERIENCE" }, // PLACEHOLDER figures
+  { value: 15, label: "HAPPY & SATISFIED CLIENTS" },
+  { value: 17, label: " COMPLETED DESIGN PROJECTS" },
 ];
 
 export const aboutPage = {
@@ -96,7 +96,8 @@ export type Project = {
 
 // PLACEHOLDER imagery: the four stock photos in /public/images stand in until real project shots are added.
 const img = {
-  code: "/images/project-1.jpg",
+  code: "/images/project-1.png",
+  project_2 :"/images/project-2.jpg",
   glow: "/images/project-2.jpg",
   track: "/images/project-3.jpg",
   house: "/images/project-4.jpg",
@@ -112,8 +113,8 @@ const placeholder = (cover: string, a: string, b: string, c: string) => ({
 // Order matters: the works grid renders them in groups of three (one wide card, then two side by side),
 // and the detail page's "Next project" follows this order, wrapping back to the start.
 export const projects: Project[] = [
-  { slug: "fintech-app", name: "Fintech App", category: "Banking", description: "Mobile banking experience design.", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.code, img.glow, img.track, img.house) },
-  { slug: "ecommerce", name: "Ecommerce Store", category: "Ecommerce", description: "Online storefront and checkout design.", client: "Client Name", platform: "Web", url: "#", ...placeholder(img.glow, img.code, img.house, img.track) },
+  { slug: "gold-savings", name: "Gold Savings App", category: "Fintech", description: "G O L D  &  J E W E L L E R Y   A P P", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.code, img.glow, img.track, img.house) },
+  { slug: "ecommerce", name: "Ecommerce Store", category: "Ecommerce", description: "Online storefront and checkout design.", client: "Client Name", platform: "Web", url: "#", ...placeholder(img.project_2, img.code, img.house, img.track) },
   { slug: "real-estate", name: "Rental Finder", category: "Real Estate", description: "Property search and booking app design.", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.house, img.track, img.code, img.glow) },
   { slug: "travel-and-tourism", name: "Travel Booking", category: "Travel and Tourism", description: "Tour discovery and booking website design.", client: "Client Name", platform: "Web", url: "#", ...placeholder(img.track, img.house, img.glow, img.code) },
   { slug: "edtech", name: "Learning Platform", category: "EdTech", description: "Course platform design for students and tutors.", client: "Client Name", platform: "Web", url: "#", ...placeholder(img.code, img.house, img.glow, img.track) },

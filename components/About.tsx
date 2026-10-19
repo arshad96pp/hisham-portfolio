@@ -10,9 +10,11 @@ export default function About() {
         </div>
         <Reveal amount={0.2} className="md:col-span-9">
           <p className="font-display text-xl leading-snug text-balance sm:text-2xl md:text-3xl lg:text-4xl">
-            Hi, I&apos;m <span className="text-primary">{profile.name}</span> — a {profile.role} with{" "}
-            <span className="text-primary">{intro.years}</span> of hands-on experience focused on{" "}
-            <em className="font-light text-muted-foreground italic">{intro.focus}</em> {intro.rest}
+            Hi, I&apos;m <span className="text-primary">{profile.name}</span> —{" "}
+            {`a `}
+            {profile.role}
+            {`passionate about turning complex problems into simple, seamless digital experiences. With 2+ years in UI/UX and a background in graphic design, I create intuitive interfaces that put users first.
+`}
           </p>
         </Reveal>
       </div>
