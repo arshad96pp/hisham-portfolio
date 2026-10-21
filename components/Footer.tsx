@@ -2,10 +2,10 @@
 
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
-import { DribbbleIcon, InstagramIcon, LinkedinIcon } from "./Icons";
+import { BehanceIcon, InstagramIcon, LinkedinIcon } from "./Icons";
 import { profile, socials } from "@/lib/data";
 
-const socialIcons = { Instagram: InstagramIcon, LinkedIn: LinkedinIcon, Dribbble: DribbbleIcon };
+const socialIcons = { Instagram: InstagramIcon, LinkedIn: LinkedinIcon, Behance: BehanceIcon };
 
 const pill =
   "inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-muted-foreground transition hover:border-primary hover:text-foreground sm:px-4";

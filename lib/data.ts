@@ -6,8 +6,8 @@ export const profile = {
   role: "UI/UX Designer",
   footerRole: "Designer",
   location: "City, Country", // PLACEHOLDER
-  email: "hello@hisham.design", // PLACEHOLDER
-  phone: "+91 00000 00000", // PLACEHOLDER
+  email: "hishamtc0502@gmail.com", // PLACEHOLDER
+  phone: "+91 8606017527", // PLACEHOLDER
   resume: "/hisham-resume.pdf", // PLACEHOLDER — add the PDF to /public
   portrait: "/images/portrait.jpg", // PLACEHOLDER — stock photo, replace with Hisham's portrait (square-ish crop, face near top)
   portraitSize: { width: 1200, height: 1500 },
@@ -22,9 +22,9 @@ export const nav = [
 
 // PLACEHOLDER — profile root URLs; swap in Hisham's real profile links.
 export const socials = [
-  { label: "Instagram", href: "https://instagram.com/" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/" },
-  { label: "Dribbble", href: "https://dribbble.com/" },
+  { label: "Instagram", href: "https://www.instagram.com/hisham_t_c?srtk=N21hdXNzeGR0NXk%3D&utm_source=qr" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/hisham-tc-024817238?utm_source=share_via&utm_content=profile&utm_medium=member_ios" },
+  { label: "Behance", href: "https://www.behance.net/cb880c3c" },
 ] as const;
 
 export const skills = [

@@ -34,12 +34,11 @@ export const LinkedinIcon = (p: SVGProps<SVGSVGElement>) => (
   </Glyph>
 );
 
-export const DribbbleIcon = (p: SVGProps<SVGSVGElement>) => (
+export const BehanceIcon = (p: SVGProps<SVGSVGElement>) => (
   <Glyph {...p}>
-    <circle cx="12" cy="12" r="10" />
-    <path d="M19.1 5.1C15 8.6 9.6 10 3 9.5" />
-    <path d="M21.8 13.6c-6.1-1.2-11.1 0-15.6 6.6" />
-    <path d="M8.6 2.8c4 5.2 6.3 11.3 7.1 18" />
+    <path d="M2 7h7.5C11.4 7 13 8.3 13 10.2c0 1.2-.6 2.1-1.5 2.6C13 13.3 14 14.4 14 16c0 2.2-1.8 3.5-4 3.5H2V7Z" />
+    <path d="M2 11h7M2 16h8" />
+    <path d="M16 9h6M19 7a4 4 0 1 0 0 10 4 4 0 0 0 0-10Z" />
   </Glyph>
 );
 
