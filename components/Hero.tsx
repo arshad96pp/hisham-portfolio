@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react";
 import { ease } from "./Reveal";
 import { profile } from "@/lib/data";
 
-const portraitClass = "aspect-square h-[clamp(260px,52vh,620px)] w-auto max-w-full rounded-[2rem] object-cover object-top";
+const portraitClass = "aspect-square h-[clamp(260px,52vh,620px)] w-auto max-w-full rounded-[2rem] object-cover object-center";
 
 // Grayscale base: fades out at the bottom and softly at the edges.
 const baseMask = {

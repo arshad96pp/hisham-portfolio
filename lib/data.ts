@@ -9,8 +9,8 @@ export const profile = {
   email: "hishamtc0502@gmail.com", // PLACEHOLDER
   phone: "+91 8606017527", // PLACEHOLDER
   resume: "/hisham-resume.pdf", // PLACEHOLDER — add the PDF to /public
-  portrait: "/images/portrait.jpg", // PLACEHOLDER — stock photo, replace with Hisham's portrait (square-ish crop, face near top)
-  portraitSize: { width: 1200, height: 1500 },
+  portrait: "/images/portrait.png",
+  portraitSize: { width: 799, height: 1065 },
 };
 
 export const nav = [
