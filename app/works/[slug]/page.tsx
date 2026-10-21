@@ -90,14 +90,27 @@ export default async function ProjectPage({ params }: PageProps<"/works/[slug]">
 
       <section className={block}>
         <div className={`${container} grid gap-4 sm:gap-6 md:grid-cols-2`}>
-          {project.mockups.map((src, i) => (
-            <Reveal key={i} y={40} amount={0.2} delay={i * 0.1} className="group overflow-hidden rounded-3xl border border-border bg-surface shadow-(--shadow-elevated)">
+          {project.subImages.map((src, i) => (
+            <Reveal
+              key={`${src}-${i}`}
+              y={40}
+              amount={0.2}
+              delay={i * 0.1}
+              className={`group overflow-hidden rounded-3xl border border-border bg-surface shadow-(--shadow-elevated) ${
+                project.subImages.length === 1 ? "md:col-span-2" : ""
+              }`}
+            >
               <div className="relative aspect-4/3 overflow-hidden">
                 <Image
                   src={src}
-                  alt={`${project.name} mockup ${i + 1}`}
+                  alt={`${project.name} ${i + 1}`}
                   fill
-                  sizes="(min-width: 1300px) 590px, (min-width: 768px) 46vw, 92vw"
+                  unoptimized
+                  sizes={
+                    project.subImages.length === 1
+                      ? "(min-width: 1300px) 1200px, 92vw"
+                      : "(min-width: 1300px) 590px, (min-width: 768px) 46vw, 92vw"
+                  }
                   className="object-cover transition duration-700 group-hover:scale-[1.04]"
                 />
               </div>
@@ -119,23 +132,34 @@ export default async function ProjectPage({ params }: PageProps<"/works/[slug]">
         </div>
       </section>
 
-      <section className={block}>
-        <div className={`${container} grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6`}>
-          {project.gallery.map((src, i) => (
-            <Reveal key={i} y={30} delay={i * 0.08} duration={0.8} className="group overflow-hidden rounded-xl border border-border bg-surface sm:rounded-2xl">
-              <div className="relative aspect-3/4 overflow-hidden">
-                <Image
-                  src={src}
-                  alt={`${project.name} gallery ${i + 1}`}
-                  fill
-                  sizes="(min-width: 1300px) 285px, (min-width: 768px) 23vw, 46vw"
-                  className="object-cover transition duration-700 group-hover:scale-[1.06]"
-                />
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {project.subImages.length > 1 && (
+        <section className={block}>
+          <div
+            className={`${container} grid gap-4 md:gap-6 ${
+              project.subImages.length >= 4
+                ? "grid-cols-2 md:grid-cols-4"
+                : project.subImages.length === 3
+                  ? "grid-cols-2 md:grid-cols-3"
+                  : "grid-cols-2"
+            }`}
+          >
+            {project.subImages.map((src, i) => (
+              <Reveal key={`${src}-gallery-${i}`} y={30} delay={i * 0.08} duration={0.8} className="group overflow-hidden rounded-xl border border-border bg-surface sm:rounded-2xl">
+                <div className="relative aspect-3/4 overflow-hidden">
+                  <Image
+                    src={src}
+                    alt={`${project.name} gallery ${i + 1}`}
+                    fill
+                    unoptimized
+                    sizes="(min-width: 1300px) 285px, (min-width: 768px) 23vw, 46vw"
+                    className="object-cover transition duration-700 group-hover:scale-[1.06]"
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className={block}>
         <div className={container}>

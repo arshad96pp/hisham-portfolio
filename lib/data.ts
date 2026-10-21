@@ -90,36 +90,172 @@ export type Project = {
   platform: string;
   url: string;
   cover: string;
-  mockups: [string, string];
-  gallery: [string, string, string, string];
+  /** Detail shots on the project page. Add more paths here as new screens are exported. */
+  subImages: string[];
 };
 
-// PLACEHOLDER imagery: the four stock photos in /public/images stand in until real project shots are added.
-const img = {
-  code: "/images/project-1.png",
-  project_2 :"/images/project-2.jpg",
-  glow: "/images/project-2.jpg",
-  track: "/images/project-3.jpg",
-  house: "/images/project-4.jpg",
-};
-
-const placeholder = (cover: string, a: string, b: string, c: string) => ({
-  cover,
-  mockups: [a, b] as [string, string],
-  gallery: [cover, a, b, c] as [string, string, string, string],
-});
-
-// PLACEHOLDER projects — replace names, copy, client, links and images with Hisham's real work.
-// Order matters: the works grid renders them in groups of three (one wide card, then two side by side),
-// and the detail page's "Next project" follows this order, wrapping back to the start.
 export const projects: Project[] = [
-  { slug: "gold-savings", name: "Gold Savings App", category: "Fintech", description: "G O L D  &  J E W E L L E R Y   A P P", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.code, img.glow, img.track, img.house) },
-  { slug: "ecommerce", name: "Ecommerce Store", category: "Ecommerce", description: "Online storefront and checkout design.", client: "Client Name", platform: "Web", url: "#", ...placeholder(img.project_2, img.code, img.house, img.track) },
-  { slug: "real-estate", name: "Rental Finder", category: "Real Estate", description: "Property search and booking app design.", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.house, img.track, img.code, img.glow) },
-  { slug: "travel-and-tourism", name: "Travel Booking", category: "Travel and Tourism", description: "Tour discovery and booking website design.", client: "Client Name", platform: "Web", url: "#", ...placeholder(img.track, img.house, img.glow, img.code) },
-  { slug: "edtech", name: "Learning Platform", category: "EdTech", description: "Course platform design for students and tutors.", client: "Client Name", platform: "Web", url: "#", ...placeholder(img.code, img.house, img.glow, img.track) },
-  { slug: "bill-reminder-app", name: "Bill Reminder App", category: "Fintech", description: "Bill tracking and reminder app design.", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.glow, img.track, img.code, img.house) },
-  { slug: "healthcare-app", name: "Health Care", category: "Medical", description: "Patient appointment and records app design.", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.house, img.code, img.track, img.glow) },
-  { slug: "elearning-app", name: "E-learning App", category: "Education", description: "Mobile learning app design.", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.track, img.glow, img.house, img.code) },
-  { slug: "ebook-app", name: "eBook Reader", category: "EdTech", description: "Reading and library app design.", client: "Client Name", platform: "iOS · Android", url: "#", ...placeholder(img.code, img.track, img.glow, img.house) },
+  {
+    slug: "gold-savings",
+    name: "Gold Savings App",
+    category: "Fintech",
+    description: "G O L D  &  J E W E L L E R Y   A P P",
+    client: "Client Name",
+    platform: "iOS · Android",
+    url: "#",
+    cover: "/images/project-1.png",
+    subImages: [
+      "/images/project-1/pro-1-1.webp",
+      "/images/project-1/pro1-2.webp",
+      "/images/project-1/pro-1-3.webp",
+      "/images/project-1/pro-1-4.webp",
+      "/images/project-1/pro-1-5.webp",
+      "/images/project-1/pro-1-6.webp",
+    ],
+  },
+  {
+    slug: "health-tracking",
+    name: "Health Tracking App",
+    category: "Health",
+    description: "H E A L T H  •  N U T R I T I O N  • W E L L N E S S",
+    client: "Client Name",
+    platform: "Web",
+    url: "#",
+    cover: "/images/project-2.png",
+    subImages: [
+      "/images/project-2/nutrition-1.webp",
+      "/images/project-2/nutrition-2.webp",
+      "/images/project-2/nutrition-3.webp",
+      "/images/project-2/nutrition-4.webp",
+      "/images/project-2/nutrition-5.webp",
+      "/images/project-2/nutrition-6.webp",
+    ],
+  },
+  {
+    slug: "project-management",
+    name: "Project Management",
+    category: "Project Management",
+    description: "P R O J E C T S  •  T A S K S  •  T E A M  C O L L A B O R A T I O N",
+    client: "Client Name",
+    platform: "iOS · Android",
+    url: "#",
+    cover: "/images/project-3.png",
+    subImages: [
+      "/images/project-3/product-1.webp",
+      "/images/project-3/product-2.webp",
+      "/images/project-3/product-3.webp",
+      "/images/project-3/product-4.webp",
+      "/images/project-3/product-5.webp",
+      "/images/project-3/product-6.webp",
+    ],
+  },
+  {
+    slug: "healthcare-landing",
+    name: "Healthcare Landing Page",
+    category: "Healthcare",
+    description: "M E D I C A L  •  D O C T O R S  •  H E A L T H C A R E",
+    client: "Healthcare / Hospital",
+    platform: "Web · Responsive Design",
+    url: "#",
+    cover: "/images/project-4.png",
+    subImages: [
+      "/images/project-4/hospital-1.webp",
+      "/images/project-4/hospital-2.webp",
+      "/images/project-4/hospital-3.webp",
+      "/images/project-4/hospital-4.webp",
+      "/images/project-4/hospital-5.webp",
+      "/images/project-4/hospital-6.webp",
+    ],
+  },
+  {
+    slug: "luxury-hotel-booking",
+    name: "Luxury Hotel Booking Website",
+    category: "Hospitality & Travel",
+    description: "L U X U R Y  •  S T A Y S  •  H O S P I T A L I T Y",
+    client: "Hotel Booking Platform",
+    platform: "Web · Responsive Design",
+    url: "#",
+    cover: "/images/project-5.png",
+    subImages: [
+      "/images/project-5/hotel-1.webp",
+      "/images/project-5/hotel-2.webp",
+      "/images/project-5/hotel-3.webp",
+      "/images/project-5/hotel-4.webp",
+      "/images/project-5/hotel-5.webp",
+      "/images/project-5/hotel-6.webp",
+    ],
+  },
+  {
+    slug: "plant-ecommerce",
+    name: "Plant E-Commerce Website",
+    category: "E-commerce · Gardening",
+    description: "P L A N T S  •  C A R E  •  G R E E N E R Y",
+    client: "Plant Shopping Store",
+    platform: "Web · Responsive Design",
+    url: "#",
+    cover: "/images/project-6.png",
+    subImages: [
+      "/images/project-6/plant-1.webp",
+      "/images/project-6/plant-2.webp",
+      "/images/project-6/plant-3.webp",
+      "/images/project-6/plant-4.webp",
+      "/images/project-6/plant-5.webp",
+      "/images/project-6/plant-6.webp",
+    ],
+  },
+  {
+    slug: "glidix",
+    name: "GLIDIX – Technology Solutions Website",
+    category: "Technology · SaaS",
+    description: "T E C H N O L O G Y  •  S O L U T I O N S  •  G R O W T H",
+    client: "Glidix Technologies",
+    platform: "Web · Responsive Design",
+    url: "#",
+    cover: "/images/project-7.png",
+    subImages: [
+      "/images/project-7/glidix-1.webp",
+      "/images/project-7/glidix-2.webp",
+      "/images/project-7/glidix-3.webp",
+      "/images/project-7/glidix-4.webp",
+      "/images/project-7/glidix-5.webp",
+      "/images/project-7/glidix-6.webp",
+    ],
+  },
+  {
+    slug: "document-management-system",
+    name: "Document Management Dashboard",
+    category: "SaaS · Document Management",
+    description:
+      "A modern document management platform designed to streamline document storage, team collaboration, task approvals, and reporting through an organized and user-friendly interface.",
+    client: "Document Management System",
+    platform: "Web · Responsive Design",
+    url: "#",
+    cover: "/images/project-8.png",
+    subImages: [
+      "/images/project-8/dms-1.webp",
+      "/images/project-8/dms-2.webp",
+      "/images/project-8/dms-3.webp",
+      "/images/project-8/dms-4.webp",
+      "/images/project-8/dms-5.webp",
+      "/images/project-8/dms-6.webp",
+    ],
+  },
+  {
+    slug: "product-configuration-system",
+    name: "Alhaya Mobile app",
+    category: "SaaS · Product Management",
+    description:
+      "A modern product configuration and management platform designed to streamline product setup, user onboarding, workflow management, and system administration through an intuitive and organized interface.",
+    client: "Product Configuration Management System",
+    platform: "Mobile App · Responsive Design",
+    url: "#",
+    cover: "/images/project-9.png",
+    subImages: [
+      "/images/project-9/pcs-1.webp",
+      "/images/project-9/pcs-2.webp",
+      "/images/project-9/pcs-3.webp",
+      "/images/project-9/pcs-4.webp",
+      "/images/project-9/pcs-5.webp",
+    ],
+  },
 ];
