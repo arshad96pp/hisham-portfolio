@@ -64,22 +64,63 @@ export const services = [
   { label: "Brand & Visual", value: "Identity · Direction" },
 ];
 
-export type ToolIcon = "figma" | "adobe" | "jira" | "lovable" | "framer";
+export type ToolIcon = "figma" | "illustrator" | "photoshop" | "adobe" | "framer" | "miro";
 
 export const tools: { name: string; label: string; icon: ToolIcon; description: string }[] = [
-  { name: "Figma", label: "Design & Prototyping", icon: "figma", description: "Wireframes, UI design, interactive prototypes and component libraries." },
-  { name: "Adobe Creative Suite", label: "Visual & Motion", icon: "adobe", description: "Photoshop, Illustrator and After Effects for visuals and motion." },
-  { name: "Jira", label: "Project Management", icon: "jira", description: "Sprint planning, ticket tracking and design hand-off with engineering." },
-  { name: "Lovable", label: "AI-powered Build", icon: "lovable", description: "Turning designs into working products quickly with AI assistance." },
+  { name: "Figma, Adobe XD", label: "Design & Prototyping", icon: "figma", description: "Wireframes, UI design, interactive prototypes and component libraries." },
+  { name: "Illustrator", label: "Vector & Brand", icon: "illustrator", description: "Logos, icons and scalable brand graphics." },
+  { name: "Photoshop", label: "Image & Visual", icon: "photoshop", description: "Photo editing, composites and marketing visuals." },
+  { name: "Adobe Suite", label: "Visual Production", icon: "adobe", description: "Photoshop, Illustrator and InDesign for print and digital work." },
   { name: "Framer", label: "Prototyping & Sites", icon: "framer", description: "Interactive prototypes and production-ready marketing sites." },
+  { name: "Miro", label: "Workshops & Mapping", icon: "miro", description: "User flows, journey maps and collaborative workshops." },
 ];
 
-// PLACEHOLDER — Hisham's real roles, companies and dates.
 export const career = [
-  { role: "UI/UX Designer", period: "Jan 2025 — Present", company: "Company Name", location: "City" },
-  { role: "Junior UI/UX Designer", period: "Jan 2023 — Dec 2024", company: "Company Name", location: "City" },
+  {
+    role: "UI/UX Designer",
+    period: "May 2025 — Present",
+    company: "Gritstone Technologies",
+    location: "Calicut (Cyberpark)",
+    highlights: [
+      "Conducted competitive analysis and market research to identify target audience segments, map user journeys, and address user needs and pain points.",
+      "Designed intuitive web architecture aligned with business goals, user experience principles, and current design trends, with clear stakeholder communication.",
+      "Delivered user-centric solutions that improve engagement and usability.",
+      "Iteratively refined designs from user feedback, design critiques, and usability testing to improve the experience and meet business objectives.",
+      "Created responsive UI designs and improved task flows to boost usability and efficiency.",
+    ],
+  },
+  {
+    role: "UI/UX Designer",
+    period: "March 2024 — April 2025",
+    company: "Trogon Media",
+    location: "Calicut (Cyberpark)",
+    highlights: [
+      "Designed intuitive, user-friendly interfaces for web and mobile applications.",
+      "Conducted user research, wireframing, prototyping, and usability testing to shape design solutions.",
+      "Collaborated with developers and product managers to align designs with business goals and technical constraints.",
+      "Created responsive and accessible designs in Figma, Adobe XD, and Sketch.",
+      "Improved user engagement by analyzing feedback and iterating on designs.",
+      "Kept design elements consistent by following brand guidelines and design systems.",
+      "Delivered projects on time while maintaining quality in fast-paced environments.",
+    ],
+  },
+  {
+    role: "Graphic Designer",
+    period: "February 2022 — March 2023",
+    company: "Outthinking",
+    location: "Bengaluru, Karnataka",
+    highlights: [
+      "Designed logos, brochures, posters, social media graphics, and marketing collateral.",
+      "Collaborated with cross-functional teams to align design concepts with branding guidelines and marketing objectives.",
+      "Managed multiple projects at once, meeting tight deadlines while keeping deliverable quality high.",
+      "Conducted market research and competitor analysis to develop competitive design solutions.",
+      "Revised designs from client feedback to support client satisfaction and project success.",
+      "Used Adobe Creative Suite (Photoshop, Illustrator, InDesign) to produce visual content.",
+      "Contributed to branding guidelines and kept design elements consistent across projects.",
+    ],
+  },
 ];
-export const careerRange = { from: "2023", to: "2026" };
+export const careerRange = { from: "2022", to: "Present" };
 
 export type Project = {
   slug: string;

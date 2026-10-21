@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ListChecks, Palette, PenTool, Sparkles } from "lucide-react";
+import { Image, Palette, Pen, PenTool, Sparkles, StickyNote } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { FramerIcon } from "@/components/Icons";
 import Collaboration from "@/components/Collaboration";
@@ -9,10 +9,11 @@ export const metadata: Metadata = { title: "About" };
 
 const toolIcons: Record<ToolIcon, typeof PenTool> = {
   figma: PenTool,
+  illustrator: Pen,
+  photoshop: Image,
   adobe: Palette,
-  jira: ListChecks,
-  lovable: Sparkles,
   framer: FramerIcon as typeof PenTool,
+  miro: StickyNote,
 };
 
 const container = "mx-auto w-[min(92%,1200px)]";
@@ -65,7 +66,7 @@ export default function AboutPage() {
           <Reveal y={30} delay={0.1}>
             <h2 className="mt-4 font-display text-[clamp(2rem,6vw,4rem)] leading-[1.05] font-semibold text-balance">Tools I use</h2>
           </Reveal>
-          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {tools.map((tool, i) => {
               const Icon = toolIcons[tool.icon];
               return (
@@ -112,19 +113,34 @@ export default function AboutPage() {
           </div>
           <ul className="mt-8 divide-y divide-border/60">
             {career.map((job, i) => (
-              <Reveal key={`${job.role}-${job.period}`} y={20} delay={i * 0.1} duration={0.8} eased={false}
+              <Reveal
+                key={`${job.company}-${job.period}`}
+                y={20}
+                delay={i * 0.1}
+                duration={0.8}
+                eased={false}
                 as="li"
-                className="grid grid-cols-1 items-start gap-2 py-6 sm:py-8 lg:grid-cols-12 lg:items-center lg:gap-8"
+                className="py-6 sm:py-8"
               >
+                <div className="grid grid-cols-1 items-start gap-2 lg:grid-cols-12 lg:items-center lg:gap-8">
                   <div className="flex items-center gap-3 lg:col-span-4">
                     <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground">
                       <Sparkles aria-hidden className="size-4" />
                     </span>
                     <span className="font-display text-base font-medium sm:text-lg md:text-xl">{job.role}</span>
                   </div>
-                  <span className="label-xs pl-[52px] lg:col-span-3 lg:pl-0">{job.period}</span>
-                  <span className="pl-[52px] text-sm font-medium lg:col-span-3 lg:pl-0">{job.company}</span>
-                  <span className="label-xs pl-[52px] lg:col-span-2 lg:pl-0 lg:text-right">{job.location}</span>
+                  <span className="label-xs pl-13 lg:col-span-3 lg:pl-0">{job.period}</span>
+                  <span className="pl-13 text-sm font-medium lg:col-span-3 lg:pl-0">{job.company}</span>
+                  <span className="label-xs pl-13 lg:col-span-2 lg:pl-0 lg:text-right">{job.location}</span>
+                </div>
+                <ul className="mt-4 space-y-2 pl-13 text-sm leading-relaxed text-muted-foreground lg:max-w-3xl">
+                  {job.highlights.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span aria-hidden className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-primary" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
             ))}
           </ul>
