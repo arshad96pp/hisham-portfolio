@@ -36,9 +36,10 @@ export const LinkedinIcon = (p: SVGProps<SVGSVGElement>) => (
 
 export const BehanceIcon = (p: SVGProps<SVGSVGElement>) => (
   <Glyph {...p}>
-    <path d="M2 7h7.5C11.4 7 13 8.3 13 10.2c0 1.2-.6 2.1-1.5 2.6C13 13.3 14 14.4 14 16c0 2.2-1.8 3.5-4 3.5H2V7Z" />
-    <path d="M2 11h7M2 16h8" />
-    <path d="M16 9h6M19 7a4 4 0 1 0 0 10 4 4 0 0 0 0-10Z" />
+    <path d="M3 18V6h4.5a3 3 0 0 1 0 6 3 3 0 0 1 0 6H3" />
+    <path d="M3 12h4.5" />
+    <path d="M14 13h7a3.5 3.5 0 0 0-7 0v2a3.5 3.5 0 0 0 6.64 1" />
+    <path d="M16 6h3" />
   </Glyph>
 );
 
