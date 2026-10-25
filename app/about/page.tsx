@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Image, Palette, Pen, PenTool, Sparkles, StickyNote } from "lucide-react";
+import { Heart, Image, Layers, Layout, Palette, Pen, PenTool, Sparkles, StickyNote, Wand2 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { FramerIcon } from "@/components/Icons";
 import Collaboration from "@/components/Collaboration";
@@ -9,11 +9,16 @@ export const metadata: Metadata = { title: "About" };
 
 const toolIcons: Record<ToolIcon, typeof PenTool> = {
   figma: PenTool,
+  adobexd: Layers,
+  strella: Sparkles,
+  uizard: Wand2,
   illustrator: Pen,
   photoshop: Image,
-  adobe: Palette,
-  framer: FramerIcon as typeof PenTool,
+  wireframe: Layout,
   miro: StickyNote,
+  framer: FramerIcon as typeof PenTool,
+  lovable: Heart,
+  adobe: Palette,
 };
 
 const container = "mx-auto w-[min(92%,1200px)]";
@@ -103,8 +108,11 @@ export default function AboutPage() {
 
       <section className="py-16 sm:py-24 md:py-32">
         <div className={container}>
-          <Reveal y={30}>
-            <h2 className="font-display text-[clamp(1.75rem,6vw,3rem)] font-semibold">Journey Through My Career</h2>
+          <Reveal y={20} duration={0.8} eased={false}>
+            <p className="label-xs">[ 03 — Experience ]</p>
+          </Reveal>
+          <Reveal y={30} delay={0.1}>
+            <h2 className="mt-4 font-display text-[clamp(2rem,6vw,4rem)] leading-[1.05] font-semibold text-balance">Experience</h2>
           </Reveal>
           <div className="mt-8 flex items-center gap-4 text-sm text-muted-foreground">
             <span className="font-display text-xl text-foreground">{careerRange.from}</span>
@@ -122,18 +130,22 @@ export default function AboutPage() {
                 as="li"
                 className="py-6 sm:py-8"
               >
-                <div className="grid grid-cols-1 items-start gap-2 lg:grid-cols-12 lg:items-center lg:gap-8">
-                  <div className="flex items-center gap-3 lg:col-span-4">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground">
-                      <Sparkles aria-hidden className="size-4" />
-                    </span>
-                    <span className="font-display text-base font-medium sm:text-lg md:text-xl">{job.role}</span>
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
+                  <div>
+                    <h3 className="font-display text-xl font-semibold text-foreground sm:text-2xl">
+                      {job.company}
+                    </h3>
+                    <p className="mt-1 flex flex-wrap items-center text-sm text-muted-foreground sm:text-base">
+                      <span className="font-medium text-foreground/90">{job.role}</span>
+                      <span aria-hidden className="mx-2.5 text-muted-foreground/40">|</span>
+                      <span>{job.period}</span>
+                    </p>
                   </div>
-                  <span className="label-xs pl-13 lg:col-span-3 lg:pl-0">{job.period}</span>
-                  <span className="pl-13 text-sm font-medium lg:col-span-3 lg:pl-0">{job.company}</span>
-                  <span className="label-xs pl-13 lg:col-span-2 lg:pl-0 lg:text-right">{job.location}</span>
+                  <span className="label-xs text-muted-foreground sm:text-right">
+                    {job.location}
+                  </span>
                 </div>
-                <ul className="mt-4 space-y-2 pl-13 text-sm leading-relaxed text-muted-foreground lg:max-w-3xl">
+                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground lg:max-w-3xl">
                   {job.highlights.map((point) => (
                     <li key={point} className="flex gap-3">
                       <span aria-hidden className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-primary" />

@@ -5,7 +5,7 @@ export const profile = {
   initial: "H",
   role: "UI/UX Designer",
   footerRole: "Designer",
-  location: "City, Country", // PLACEHOLDER
+  location: "Calicut, Kerala", // PLACEHOLDER
   email: "hishamtc0502@gmail.com", // PLACEHOLDER
   phone: "+91 8606017527", // PLACEHOLDER
   resume: "/hisham-resume.pdf", // PLACEHOLDER — add the PDF to /public
@@ -54,7 +54,7 @@ export const aboutPage = {
   headline: { lead: "Yes! I do design", soft: "more than you do", end: "!" },
   tagline: `I'm a designer based in ${profile.location}`,
   summary:
-    "I focus on clear interactions and considered visual design that serve both the people using a product and the goals behind it — with close attention to type, motion and the small details.",
+    "I excel in creating seamless interactions and engaging designs that effectively meet both user needs and business objectives - with an obsession for type, motion, and quiet deta.",
 };
 
 export const services = [
@@ -64,15 +64,30 @@ export const services = [
   { label: "Brand & Visual", value: "Identity · Direction" },
 ];
 
-export type ToolIcon = "figma" | "illustrator" | "photoshop" | "adobe" | "framer" | "miro";
+export type ToolIcon =
+  | "figma"
+  | "adobexd"
+  | "strella"
+  | "uizard"
+  | "illustrator"
+  | "photoshop"
+  | "wireframe"
+  | "miro"
+  | "framer"
+  | "lovable"
+  | "adobe";
 
 export const tools: { name: string; label: string; icon: ToolIcon; description: string }[] = [
-  { name: "Figma, Adobe XD", label: "Design & Prototyping", icon: "figma", description: "Wireframes, UI design, interactive prototypes and component libraries." },
-  { name: "Illustrator", label: "Vector & Brand", icon: "illustrator", description: "Logos, icons and scalable brand graphics." },
-  { name: "Photoshop", label: "Image & Visual", icon: "photoshop", description: "Photo editing, composites and marketing visuals." },
-  { name: "Adobe Suite", label: "Visual Production", icon: "adobe", description: "Photoshop, Illustrator and InDesign for print and digital work." },
-  { name: "Framer", label: "Prototyping & Sites", icon: "framer", description: "Interactive prototypes and production-ready marketing sites." },
-  { name: "Miro", label: "Workshops & Mapping", icon: "miro", description: "User flows, journey maps and collaborative workshops." },
+  { name: "Figma", label: "Design & Prototyping", icon: "figma", description: "Wireframes, UI design, interactive prototypes and component libraries." },
+  { name: "Adobe XD", label: "UI/UX & Prototyping", icon: "adobexd", description: "Interactive user flows, screen transitions and rapid UI mockups." },
+  { name: "Strella.Ai", label: "AI User Research", icon: "strella", description: "AI-moderated user research interviews, qualitative insights and research analysis." },
+  { name: "Uizard", label: "AI UI Prototyping", icon: "uizard", description: "AI-powered rapid wireframing, prompt-to-design concepts and quick mockups." },
+  { name: "Adobe Illustrator", label: "Vector & Brand", icon: "illustrator", description: "Logos, icons, custom vector illustrations and scalable brand graphics." },
+  { name: "Adobe Photoshop", label: "Image & Visual", icon: "photoshop", description: "Photo editing, digital manipulation, composites and marketing visuals." },
+  { name: "Wireframe CC", label: "Rapid Wireframing", icon: "wireframe", description: "Minimalist low-fidelity wireframing and distraction-free structural UI ideation." },
+  { name: "Miro", label: "Workshops & Mapping", icon: "miro", description: "User flows, journey maps, mind maps and collaborative team workshops." },
+  { name: "Framer", label: "Website Design & Interactive Experiences", icon: "framer", description: "Interactive prototypes, animations and production-ready marketing sites." },
+  { name: "Lovable", label: "AI App Generation", icon: "lovable", description: "Prompt-driven rapid web app prototyping and full-stack concept validation." },
 ];
 
 export const career = [
@@ -284,7 +299,7 @@ export const projects: Project[] = [
   {
     slug: "product-configuration-system",
     name: "Alhaya Mobile app",
-    category: "SaaS · Product Management",
+    category: "Smart RFID Inventory & Asset Tracking App",
     description:
       "A modern product configuration and management platform designed to streamline product setup, user onboarding, workflow management, and system administration through an intuitive and organized interface.",
     client: "Halhaya",
