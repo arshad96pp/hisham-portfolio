@@ -161,12 +161,12 @@ export const projects: Project[] = [
     url: "https://www.behance.net/gallery/257164857/Oromi-Gold-Savings-App",
     cover: "/images/project-1.png",
     subImages: [
-      "/images/project-1/pro-1-1.webp",
-      "/images/project-1/pro1-2.webp",
-      "/images/project-1/pro-1-3.webp",
-      "/images/project-1/pro-1-4.webp",
-      "/images/project-1/pro-1-5.webp",
       "/images/project-1/pro-1-6.webp",
+      "/images/project-1/pro-1-5.webp",
+      "/images/project-1/pro-1-4.webp",
+      "/images/project-1/pro-1-3.webp",
+      "/images/project-1/pro1-2.webp",
+      "/images/project-1/pro-1-1.webp",
     ],
   },
   {
@@ -288,8 +288,8 @@ export const projects: Project[] = [
     url: "https://www.behance.net/gallery/247939913/Document-Management-System-Web-App",
     cover: "/images/project-8.png",
     subImages: [
-      "/images/project-8/dms-1.webp",
       "/images/project-8/dms-2.webp",
+      "/images/project-8/dms-1.webp",
       "/images/project-8/dms-3.webp",
       "/images/project-8/dms-4.webp",
       "/images/project-8/dms-5.webp",
